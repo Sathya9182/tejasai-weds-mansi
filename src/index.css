@@ -1,0 +1,238 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-cinzel: "Cinzel", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-telugu: "Noto Serif Telugu", Georgia, serif;
+
+  --color-canvas: #FFFFFF;
+  --color-dark: #09090B;
+  --color-dark-surface: #18181B;
+  --color-pink-primary: #EC4899;
+  --color-pink-soft: #FDF2F8;
+  --color-purple-primary: #8B5CF6;
+  --color-purple-deep: #7C3AED;
+  --color-purple-soft: #FAF5FF;
+}
+
+@layer utilities {
+  .font-serif-luxury {
+    font-family: var(--font-serif);
+  }
+  .font-cinzel-luxury {
+    font-family: var(--font-cinzel);
+  }
+  .font-sans-body {
+    font-family: var(--font-sans);
+  }
+  .font-telugu-script {
+    font-family: var(--font-telugu);
+  }
+}
+
+/* 3D Floating Petals Animations */
+@keyframes floatPetal {
+  0% {
+    transform: translateY(-20px) rotate(0deg) scale(0.9);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.85;
+  }
+  80% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(105vh) rotate(360deg) scale(1.1);
+    opacity: 0;
+  }
+}
+
+.animate-petal-fall {
+  animation: floatPetal linear infinite;
+}
+
+/* Hanging Flowers Breeze Swaying Keyframes */
+@keyframes breezeSwayLeft {
+  0%, 100% {
+    transform: rotate(0deg) skewX(0deg);
+  }
+  30% {
+    transform: rotate(5.5deg) skewX(2.5deg);
+  }
+  60% {
+    transform: rotate(-3deg) skewX(-1.5deg);
+  }
+  85% {
+    transform: rotate(1.5deg) skewX(0.8deg);
+  }
+}
+
+@keyframes breezeSwayRight {
+  0%, 100% {
+    transform: rotate(0deg) skewX(0deg);
+  }
+  25% {
+    transform: rotate(4.8deg) skewX(2.2deg);
+  }
+  55% {
+    transform: rotate(-3.5deg) skewX(-1.8deg);
+  }
+  80% {
+    transform: rotate(2deg) skewX(1deg);
+  }
+}
+
+@keyframes breezeSwayGentle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+/* Air Stream & Wind Breeze Wave Keyframes */
+@keyframes airCurrentFlow {
+  0% {
+    transform: translateX(-110%) scaleY(0.8) translateY(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.75;
+    transform: translateX(-40%) scaleY(1.1) translateY(-14px);
+  }
+  55% {
+    opacity: 0.85;
+    transform: translateX(35%) scaleY(0.95) translateY(18px);
+  }
+  85% {
+    opacity: 0.6;
+    transform: translateX(85%) scaleY(1.05) translateY(-8px);
+  }
+  100% {
+    transform: translateX(130%) scaleY(0.8) translateY(5px);
+    opacity: 0;
+  }
+}
+
+/* Wind Petals Drifting Horizontally Across */
+@keyframes windPetalDrift {
+  0% {
+    transform: translate3d(-8vw, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.95;
+  }
+  50% {
+    transform: translate3d(50vw, 15vh, 20px) rotateX(240deg) rotateY(480deg) rotateZ(180deg);
+    opacity: 0.9;
+  }
+  85% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translate3d(110vw, 35vh, 0) rotateX(480deg) rotateY(960deg) rotateZ(360deg);
+    opacity: 0;
+  }
+}
+
+/* User Exact Flower 3D Air Drift Keyframes */
+@keyframes exactFlowerAirDrift {
+  0% {
+    transform: translate3d(-10vw, -4vh, -50px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(0.85);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.95;
+    transform: translate3d(5vw, 2vh, 10px) rotateX(45deg) rotateY(60deg) rotateZ(30deg) scale(1);
+  }
+  35% {
+    opacity: 1;
+    transform: translate3d(38vw, -6vh, 40px) rotateX(160deg) rotateY(180deg) rotateZ(110deg) scale(1.05);
+  }
+  65% {
+    opacity: 0.95;
+    transform: translate3d(70vw, 12vh, 20px) rotateX(280deg) rotateY(320deg) rotateZ(210deg) scale(0.98);
+  }
+  92% {
+    opacity: 0.85;
+    transform: translate3d(98vw, 4vh, -20px) rotateX(380deg) rotateY(420deg) rotateZ(300deg) scale(0.9);
+  }
+  100% {
+    transform: translate3d(115vw, 18vh, -60px) rotateX(450deg) rotateY(540deg) rotateZ(360deg) scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* User Exact Flower Air Floating Keyframes (Top to Bottom with Wind Sway) */
+@keyframes exactFlowerAirDescent {
+  0% {
+    transform: translate3d(0, -60px, 0) rotate(0deg) scale(0.9);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.95;
+  }
+  30% {
+    transform: translate3d(35px, 28vh, 30px) rotate(65deg) scale(1.02);
+  }
+  55% {
+    transform: translate3d(-25px, 58vh, 10px) rotate(140deg) scale(0.95);
+  }
+  80% {
+    transform: translate3d(40px, 85vh, 20px) rotate(220deg) scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate3d(15px, 108vh, 0) rotate(320deg) scale(0.85);
+    opacity: 0;
+  }
+}
+
+.animate-breeze-sway-left {
+  transform-origin: top center;
+  animation: breezeSwayLeft 4.5s ease-in-out infinite;
+}
+
+.animate-breeze-sway-right {
+  transform-origin: top center;
+  animation: breezeSwayRight 5s ease-in-out infinite;
+}
+
+.animate-air-stream {
+  animation: airCurrentFlow 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-wind-petal {
+  animation: windPetalDrift linear infinite;
+}
+
+.animate-exact-flower-air {
+  animation: exactFlowerAirDrift cubic-bezier(0.35, 0.05, 0.25, 0.95) infinite;
+  will-change: transform, opacity;
+}
+
+.animate-exact-flower-descent {
+  animation: exactFlowerAirDescent linear infinite;
+  will-change: transform, opacity;
+}
+
+/* Custom scrollbar and smooth transitions */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FFFFFF;
+}
+::-webkit-scrollbar-thumb {
+  background: #E4E4E7;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A855F7;
+}
+

@@ -1,0 +1,6 @@
+{
+  "name": "Teja Sai & Mansi Wedding Celebration",
+  "description": "Official wedding celebration and invitation portal for Chi. Teja Sai and Chi.La.Sow. Mansi on October 15 & 16, 2026 at Proddatur, Andhra Pradesh. Features RSVP tracking, organizer dashboard with CSV export, photo gallery, event countdown, travel logistics, guestbook, and real-time push updates.",
+  "requestFramePermissions": ["notifications"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
