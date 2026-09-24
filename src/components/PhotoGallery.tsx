@@ -140,39 +140,39 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({ currentLang }) => {
 
       {/* Lightbox Modal */}
       {selectedPhotoIndex !== null && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/92 backdrop-blur-md p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/92 backdrop-blur-md p-3 sm:p-4">
           <button
             onClick={closeLightbox}
-            className="absolute top-4 right-4 p-2 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-colors z-50"
+            className="absolute top-3 right-3 sm:top-4 sm:right-4 p-2.5 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-colors z-50 cursor-pointer"
             aria-label="Close photo view"
           >
-            <X className="w-6 h-6" />
+            <X className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
 
           {/* Previous Button */}
           <button
             onClick={prevPhoto}
-            className="absolute left-4 top-1/2 -translate-y-1/2 p-3 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-colors z-50"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-colors z-50 cursor-pointer"
             aria-label="Previous photo"
           >
-            <ChevronLeft className="w-6 h-6" />
+            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
 
           {/* Current Photo Frame */}
-          <div className="max-w-4xl max-h-[85vh] flex flex-col items-center justify-center">
+          <div className="max-w-4xl max-h-[85vh] flex flex-col items-center justify-center px-8 sm:px-12">
             <img
               src={PHOTOS[selectedPhotoIndex].url}
               alt={PHOTOS[selectedPhotoIndex].title}
-              className="max-h-[70vh] w-auto max-w-full object-contain rounded-xl shadow-2xl border border-white/20"
+              className="max-h-[60vh] sm:max-h-[70vh] w-auto max-w-full object-contain rounded-xl shadow-2xl border border-white/20"
             />
-            <div className="mt-4 text-center text-white max-w-xl">
-              <span className="text-xs uppercase tracking-widest text-pink-400 font-bold">
+            <div className="mt-3 sm:mt-4 text-center text-white max-w-xl">
+              <span className="text-[10px] sm:text-xs uppercase tracking-widest text-pink-400 font-bold">
                 {PHOTOS[selectedPhotoIndex].category}
               </span>
-              <h4 className="text-xl font-serif-luxury font-medium mt-0.5">
+              <h4 className="text-lg sm:text-xl font-serif-luxury font-medium mt-0.5">
                 {PHOTOS[selectedPhotoIndex].title}
               </h4>
-              <p className="text-xs text-zinc-300 mt-1">
+              <p className="text-[11px] sm:text-xs text-zinc-300 mt-1 line-clamp-2 sm:line-clamp-none">
                 {PHOTOS[selectedPhotoIndex].caption}
               </p>
             </div>
@@ -181,10 +181,10 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({ currentLang }) => {
           {/* Next Button */}
           <button
             onClick={nextPhoto}
-            className="absolute right-4 top-1/2 -translate-y-1/2 p-3 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-colors z-50"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-colors z-50 cursor-pointer"
             aria-label="Next photo"
           >
-            <ChevronRight className="w-6 h-6" />
+            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
         </div>
       )}

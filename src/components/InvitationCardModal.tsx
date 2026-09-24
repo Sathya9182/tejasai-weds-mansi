@@ -25,18 +25,18 @@ export const InvitationCardModal: React.FC<InvitationCardModalProps> = ({
       <div className="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl border-2 border-purple-300 overflow-hidden my-auto">
         
         {/* Modal Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-zinc-200 bg-zinc-950 text-white">
-          <div className="flex items-center gap-2">
-            <span className="text-xs uppercase tracking-widest text-pink-400 font-bold">
-              Original Wedding Invitation Card
+        <div className="flex items-center justify-between px-3 sm:px-6 py-3 sm:py-4 border-b border-zinc-200 bg-zinc-950 text-white">
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <span className="text-[11px] sm:text-xs uppercase tracking-widest text-pink-400 font-bold truncate max-w-[130px] sm:max-w-none">
+              Invitation Card
             </span>
             <span className="text-xs text-zinc-400 font-mono">
-              (Page {currentPage} of 4)
+              ({currentPage}/4)
             </span>
           </div>
 
-          <div className="flex items-center gap-2">
-            {/* Quick Page Select Tabs */}
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            {/* Quick Page Select Tabs (Desktop) */}
             <div className="hidden sm:flex items-center bg-zinc-800 p-0.5 rounded-xl text-xs">
               <button
                 onClick={() => setCurrentPage(1)}
@@ -72,9 +72,24 @@ export const InvitationCardModal: React.FC<InvitationCardModalProps> = ({
               </button>
             </div>
 
+            {/* Quick Page Select Numbers (Mobile) */}
+            <div className="flex sm:hidden items-center bg-zinc-800 p-0.5 rounded-lg text-[11px]">
+              {[1, 2, 3, 4].map((num) => (
+                <button
+                  key={num}
+                  onClick={() => setCurrentPage(num)}
+                  className={`w-7 h-7 rounded-md font-bold transition-colors cursor-pointer flex items-center justify-center ${
+                    currentPage === num ? 'bg-purple-600 text-white shadow-xs' : 'text-zinc-400 hover:text-white'
+                  }`}
+                >
+                  {num}
+                </button>
+              ))}
+            </div>
+
             <button
               onClick={handlePrint}
-              className="p-2 text-zinc-400 hover:text-white hover:bg-zinc-800 rounded-lg transition-colors cursor-pointer"
+              className="p-1.5 sm:p-2 text-zinc-400 hover:text-white hover:bg-zinc-800 rounded-lg transition-colors cursor-pointer"
               title="Print Invitation Card"
             >
               <Printer className="w-4 h-4" />
@@ -82,7 +97,7 @@ export const InvitationCardModal: React.FC<InvitationCardModalProps> = ({
 
             <button
               onClick={onClose}
-              className="p-2 text-zinc-400 hover:text-white hover:bg-zinc-800 rounded-lg transition-colors cursor-pointer"
+              className="p-1.5 sm:p-2 text-zinc-400 hover:text-white hover:bg-zinc-800 rounded-lg transition-colors cursor-pointer"
               title="Close"
             >
               <X className="w-5 h-5" />
@@ -91,10 +106,10 @@ export const InvitationCardModal: React.FC<InvitationCardModalProps> = ({
         </div>
 
         {/* Card Canvas Container */}
-        <div className="p-4 sm:p-8 md:p-12 overflow-y-auto max-h-[80vh] flex flex-col items-center justify-center bg-zinc-100">
+        <div className="p-3 sm:p-8 md:p-12 overflow-y-auto max-h-[80vh] flex flex-col items-center justify-center bg-zinc-100">
           
           {/* Card Border Frame */}
-          <div className="w-full max-w-3xl bg-white border-2 border-purple-200 rounded-2xl p-6 sm:p-10 shadow-lg relative min-h-[520px] flex flex-col justify-between">
+          <div className="w-full max-w-3xl bg-white border-2 border-purple-200 rounded-2xl p-4 sm:p-10 shadow-lg relative min-h-[460px] sm:min-h-[520px] flex flex-col justify-between">
             {/* Elegant Ornamental Corner Accents */}
             <div className="absolute top-2 left-2 w-8 h-8 border-t-2 border-l-2 border-purple-500" />
             <div className="absolute top-2 right-2 w-8 h-8 border-t-2 border-r-2 border-purple-500" />

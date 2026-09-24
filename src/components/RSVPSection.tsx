@@ -158,7 +158,7 @@ export const RSVPSection: React.FC<RSVPSectionProps> = ({ currentLang }) => {
           </div>
         ) : (
           /* RSVP Form */
-          <div className="bg-white rounded-3xl p-6 sm:p-10 border-2 border-purple-200/80 shadow-lg">
+          <div className="bg-white rounded-3xl p-5 sm:p-10 border-2 border-purple-200/80 shadow-lg">
             <form onSubmit={handleSubmit} className="space-y-6">
               
               {/* Personal Information */}
@@ -389,7 +389,7 @@ export const RSVPSection: React.FC<RSVPSectionProps> = ({ currentLang }) => {
               <button
                 type="submit"
                 disabled={submitting}
-                className="w-full py-3.5 text-xs font-semibold uppercase tracking-wider text-white bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 hover:from-pink-600 hover:via-purple-700 hover:to-indigo-700 rounded-xl transition-all shadow-md flex items-center justify-center gap-2 disabled:opacity-50"
+                className="w-full h-12 text-xs font-semibold uppercase tracking-wider text-white bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 hover:from-pink-600 hover:via-purple-700 hover:to-indigo-700 rounded-xl transition-all shadow-md flex items-center justify-center gap-2 disabled:opacity-50 cursor-pointer"
               >
                 <Sparkles className="w-4 h-4" />
                 <span>{submitting ? 'Confirming Your RSVP...' : 'Confirm RSVP Response'}</span>

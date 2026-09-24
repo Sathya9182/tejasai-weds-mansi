@@ -250,7 +250,7 @@ export const HangingFlowersAndBreeze: React.FC = () => {
         aria-hidden="true"
       >
         {/* Top-Left Floral Header Swag / Arch Canopy */}
-        <div className="absolute top-0 left-0 w-44 sm:w-56 md:w-68 h-20 -translate-x-4 -translate-y-2 opacity-95">
+        <div className="absolute top-0 left-0 w-28 sm:w-56 md:w-68 h-14 sm:h-20 -translate-x-3 -translate-y-2 opacity-95">
           <svg viewBox="0 0 280 80" className="w-full h-full drop-shadow-md">
             <defs>
               <linearGradient id="leftVineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -289,9 +289,9 @@ export const HangingFlowersAndBreeze: React.FC = () => {
           </svg>
         </div>
 
-        {/* Strand 1: Longest Luxurious Hanging Floral Garland (Leftmost) */}
+        {/* Strand 1: Longest Luxurious Hanging Floral Garland (Leftmost Edge) */}
         <div
-          className={`absolute top-0 left-2 sm:left-4 origin-top ${
+          className={`absolute top-0 left-0 sm:left-4 origin-top ${
             breezeIntensity !== 'off' ? 'animate-breeze-sway-left' : ''
           }`}
           style={{ animationDuration: breezeIntensity === 'gust' ? '2.4s' : '4.6s' }}
@@ -300,7 +300,7 @@ export const HangingFlowersAndBreeze: React.FC = () => {
             width="44"
             height="460"
             viewBox="0 0 50 500"
-            className="w-8 sm:w-11 drop-shadow-lg"
+            className="w-6 sm:w-11 drop-shadow-md"
           >
             <defs>
               <linearGradient id="leftStem1" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -385,9 +385,9 @@ export const HangingFlowersAndBreeze: React.FC = () => {
           </svg>
         </div>
 
-        {/* Strand 2: Medium Hanging Floral Garland (Left Inner) */}
+        {/* Strand 2: Medium Hanging Floral Garland (Left Inner - desktop & tablet) */}
         <div
-          className={`absolute top-0 left-12 sm:left-20 origin-top ${
+          className={`hidden sm:block absolute top-0 left-12 sm:left-20 origin-top ${
             breezeIntensity !== 'off' ? 'animate-breeze-sway-left' : ''
           }`}
           style={{
@@ -497,7 +497,7 @@ export const HangingFlowersAndBreeze: React.FC = () => {
         aria-hidden="true"
       >
         {/* Top-Right Floral Header Swag / Arch Canopy */}
-        <div className="absolute top-0 right-0 w-44 sm:w-56 md:w-68 h-20 translate-x-4 -translate-y-2 opacity-95">
+        <div className="absolute top-0 right-0 w-28 sm:w-56 md:w-68 h-14 sm:h-20 translate-x-3 -translate-y-2 opacity-95">
           <svg viewBox="0 0 280 80" className="w-full h-full drop-shadow-md">
             <defs>
               <linearGradient id="rightVineGrad" x1="100%" y1="0%" x2="0%" y2="100%">
@@ -535,9 +535,9 @@ export const HangingFlowersAndBreeze: React.FC = () => {
           </svg>
         </div>
 
-        {/* Strand 1: Longest Luxurious Hanging Floral Garland (Rightmost) */}
+        {/* Strand 1: Longest Luxurious Hanging Floral Garland (Rightmost Edge) */}
         <div
-          className={`absolute top-0 right-2 sm:right-4 origin-top ${
+          className={`absolute top-0 right-0 sm:right-4 origin-top ${
             breezeIntensity !== 'off' ? 'animate-breeze-sway-right' : ''
           }`}
           style={{ animationDuration: breezeIntensity === 'gust' ? '2.5s' : '4.8s' }}
@@ -546,7 +546,7 @@ export const HangingFlowersAndBreeze: React.FC = () => {
             width="44"
             height="460"
             viewBox="0 0 50 500"
-            className="w-8 sm:w-11 drop-shadow-lg"
+            className="w-6 sm:w-11 drop-shadow-md"
           >
             <defs>
               <linearGradient id="rightStem1" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -629,9 +629,9 @@ export const HangingFlowersAndBreeze: React.FC = () => {
           </svg>
         </div>
 
-        {/* Strand 2: Medium Hanging Floral Garland (Right Inner) */}
+        {/* Strand 2: Medium Hanging Floral Garland (Right Inner - desktop & tablet) */}
         <div
-          className={`absolute top-0 right-12 sm:right-20 origin-top ${
+          className={`hidden sm:block absolute top-0 right-12 sm:right-20 origin-top ${
             breezeIntensity !== 'off' ? 'animate-breeze-sway-right' : ''
           }`}
           style={{
@@ -734,12 +734,13 @@ export const HangingFlowersAndBreeze: React.FC = () => {
       </div>
 
       {/* ============================================================== */}
-      {/* 4. DISCREET BREEZE & 5s AIR FLOWER CYCLE CONTROL PILL          */}
+      {/* 4. DISCREET BREEZE & 10s AIR FLOWER CYCLE CONTROL PILL         */}
+      {/* (Mobile & iPhone 13/13 Pro Responsive Layout)                  */}
       {/* ============================================================== */}
-      <div className="fixed bottom-5 left-4 sm:left-5 z-40 flex flex-wrap items-center gap-2 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-lg border border-purple-200/90 text-xs font-semibold text-zinc-800 transition-all hover:border-purple-400">
+      <div className="fixed bottom-3 sm:bottom-5 left-3 sm:left-5 z-40 max-w-[calc(100vw-1.5rem)] flex items-center gap-1.5 sm:gap-2 bg-white/95 backdrop-blur-md px-2.5 sm:px-3.5 py-1.5 rounded-full shadow-lg border border-purple-200/90 text-[10px] sm:text-xs font-semibold text-zinc-800 transition-all hover:border-purple-400">
         <button
           onClick={triggerGust}
-          className="flex items-center gap-1.5 hover:text-purple-700 transition-colors cursor-pointer"
+          className="flex items-center gap-1 hover:text-purple-700 transition-colors cursor-pointer shrink-0"
           title="Send a fresh breeze through the flowers"
         >
           <Wind
@@ -747,42 +748,42 @@ export const HangingFlowersAndBreeze: React.FC = () => {
               breezeIntensity === 'gust' ? 'animate-spin' : ''
             }`}
           />
-          <span className="text-[11px]">
-            {breezeIntensity === 'gust' ? 'Wind Blowing...' : 'Blow Fresh Breeze'}
+          <span className="text-[10px] sm:text-[11px] whitespace-nowrap">
+            {breezeIntensity === 'gust' ? 'Blowing...' : 'Breeze'}
           </span>
-          <Sparkles className="w-3 h-3 text-pink-500 animate-pulse" />
+          <Sparkles className="w-3 h-3 text-pink-500 animate-pulse hidden sm:inline-block" />
         </button>
 
-        <span className="w-px h-3 bg-zinc-200" />
+        <span className="w-px h-3 bg-zinc-200 shrink-0" />
 
         {/* 10s Alternating Appear / Disappear Indicator for Air Breeze Flowers */}
         <div
-          className="flex items-center gap-1.5 text-[11px]"
+          className="flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-[11px] shrink-0"
           title="Air floating flowers appear for 10s and turn off for 10s (Hanging flowers are always on)"
         >
           <span
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+            className={`w-2 h-2 rounded-full transition-all duration-300 shrink-0 ${
               isAirFlowersVisible
                 ? 'bg-emerald-500 ring-2 ring-emerald-200'
                 : 'bg-amber-400 ring-2 ring-amber-100'
             }`}
           />
-          <span className={isAirFlowersVisible ? 'text-purple-900 font-bold' : 'text-zinc-500 font-medium'}>
-            {isAirFlowersVisible ? `Air Flowers: Active (${countdown}s)` : `Air Flowers: Off (${countdown}s)`}
+          <span className={`whitespace-nowrap ${isAirFlowersVisible ? 'text-purple-900 font-bold' : 'text-zinc-500 font-medium'}`}>
+            {isAirFlowersVisible ? `Air: ${countdown}s` : `Off: ${countdown}s`}
           </span>
         </div>
 
-        <span className="w-px h-3 bg-zinc-200" />
+        <span className="w-px h-3 bg-zinc-200 shrink-0 hidden sm:inline-block" />
 
         {/* Hanging Flowers Status Badge */}
         <span
-          className="text-[10px] text-pink-700 font-semibold bg-pink-50 px-2 py-0.5 rounded-full border border-pink-200"
+          className="text-[9px] sm:text-[10px] text-pink-700 font-semibold bg-pink-50 px-1.5 sm:px-2 py-0.5 rounded-full border border-pink-200 shrink-0 hidden sm:inline-block"
           title="Hanging floral garlands on the left and right borders are always on"
         >
-          Garlands: Always On
+          Garlands: On
         </span>
 
-        <span className="w-px h-3 bg-zinc-200" />
+        <span className="w-px h-3 bg-zinc-200 shrink-0" />
 
         {/* Toggle 10s Auto Cycle for Air Flowers */}
         <button
@@ -797,14 +798,14 @@ export const HangingFlowersAndBreeze: React.FC = () => {
               return next;
             });
           }}
-          className={`text-[10px] px-1.5 py-0.5 rounded-md transition-colors cursor-pointer ${
+          className={`text-[9px] sm:text-[10px] px-1.5 py-0.5 rounded-md transition-colors cursor-pointer shrink-0 whitespace-nowrap ${
             isAutoCycle
               ? 'text-purple-700 bg-purple-50 font-bold hover:bg-purple-100'
               : 'text-zinc-500 hover:text-zinc-900'
           }`}
           title={isAutoCycle ? '10s air flower cycle is Active' : 'Air flowers set to Always On'}
         >
-          {isAutoCycle ? '10s Cycle' : 'Always On'}
+          {isAutoCycle ? '10s' : 'Always On'}
         </button>
       </div>
     </>

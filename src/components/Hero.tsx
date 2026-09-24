@@ -111,8 +111,8 @@ END:VCALENDAR`;
         </div>
 
         {/* Main Wedding Announcement Headline */}
-        <div className="text-center max-w-4xl mx-auto space-y-4 mb-10">
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif-luxury font-medium text-zinc-950 tracking-tight leading-[1.08] text-balance">
+        <div className="text-center max-w-4xl mx-auto space-y-4 mb-8 sm:mb-10">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif-luxury font-medium text-zinc-950 tracking-tight leading-[1.12] text-balance">
             {currentLang === 'te' ? (
               <span>
                 తేజ సాయి <span className="italic bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent font-normal">పరిణయం</span> మాన్సి
@@ -140,13 +140,13 @@ END:VCALENDAR`;
           {/* Quick Date and Location line */}
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-xs sm:text-sm text-zinc-500 pt-2">
             <span className="inline-flex items-center gap-1.5 font-medium text-zinc-900 bg-pink-50/80 px-3 py-1 rounded-md border border-pink-200">
-              <Calendar className="w-4 h-4 text-pink-600" />
-              October 15 &amp; 16, 2026
+              <Calendar className="w-4 h-4 text-pink-600 shrink-0" />
+              <span>October 15 &amp; 16, 2026</span>
             </span>
-            <span aria-hidden="true" className="text-purple-300">·</span>
-            <span className="inline-flex items-center gap-1.5 bg-purple-50/80 px-3 py-1 rounded-md border border-purple-200 text-zinc-900 font-medium">
-              <MapPin className="w-4 h-4 text-purple-600" />
-              Reddy Function Hall, Proddatur, YSR Kadapa
+            <span aria-hidden="true" className="hidden sm:inline text-purple-300">·</span>
+            <span className="inline-flex items-center gap-1.5 bg-purple-50/80 px-3 py-1 rounded-md border border-purple-200 text-zinc-900 font-medium text-center">
+              <MapPin className="w-4 h-4 text-purple-600 shrink-0" />
+              <span>Reddy Function Hall, Proddatur</span>
             </span>
           </div>
         </div>
@@ -212,59 +212,63 @@ END:VCALENDAR`;
         </div>
 
         {/* Live Dual Countdown Timer in High-Contrast Obsidian & Crisp White */}
-        <div className="max-w-2xl mx-auto bg-white rounded-2xl border-2 border-purple-200/80 p-6 sm:p-8 shadow-xl text-center relative overflow-hidden">
+        <div className="max-w-2xl mx-auto bg-white rounded-2xl border-2 border-purple-200/80 p-4 sm:p-8 shadow-xl text-center relative overflow-hidden">
           {/* Subtle Pink/Purple Glow Accent */}
           <div className="absolute -top-12 -right-12 w-32 h-32 bg-pink-500/10 rounded-full blur-2xl pointer-events-none" />
           <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl pointer-events-none" />
 
           {/* Segmented Timer Switch */}
-          <div className="inline-flex items-center p-1 bg-zinc-100 rounded-xl mb-6 border border-zinc-200">
+          <div className="grid grid-cols-2 p-1 bg-zinc-100 rounded-xl mb-5 sm:mb-6 border border-zinc-200 max-w-sm sm:max-w-md mx-auto">
             <button
               onClick={() => setActiveTimerTab('muhurtham')}
-              className={`px-4 py-2 text-xs font-semibold rounded-lg transition-all ${
+              className={`px-2 py-2 text-[11px] sm:text-xs font-semibold rounded-lg transition-all text-center truncate cursor-pointer ${
                 activeTimerTab === 'muhurtham'
                   ? 'bg-zinc-950 text-white shadow-xs'
                   : 'text-zinc-600 hover:text-zinc-950'
               }`}
             >
-              Sumuhurtham (Oct 16 · 07:58 AM)
+              <span>Sumuhurtham</span>
+              <span className="block text-[9px] font-normal opacity-80 sm:hidden">Oct 16 · 7:58 AM</span>
+              <span className="hidden sm:inline"> (Oct 16 · 7:58 AM)</span>
             </button>
             <button
               onClick={() => setActiveTimerTab('reception')}
-              className={`px-4 py-2 text-xs font-semibold rounded-lg transition-all ${
+              className={`px-2 py-2 text-[11px] sm:text-xs font-semibold rounded-lg transition-all text-center truncate cursor-pointer ${
                 activeTimerTab === 'reception'
                   ? 'bg-zinc-950 text-white shadow-xs'
                   : 'text-zinc-600 hover:text-zinc-950'
               }`}
             >
-              Reception &amp; Dinner (Oct 15 · 7:30 PM)
+              <span>Reception</span>
+              <span className="block text-[9px] font-normal opacity-80 sm:hidden">Oct 15 · 7:30 PM</span>
+              <span className="hidden sm:inline"> &amp; Dinner (Oct 15)</span>
             </button>
           </div>
 
-          <div className="grid grid-cols-4 gap-2 sm:gap-4 max-w-md mx-auto">
-            <div className="p-3.5 bg-zinc-50 rounded-xl border border-zinc-200 shadow-2xs">
+          <div className="grid grid-cols-4 gap-1.5 sm:gap-4 max-w-md mx-auto">
+            <div className="p-2 sm:p-3.5 bg-zinc-50 rounded-xl border border-zinc-200 shadow-2xs">
               <span className="block text-2xl sm:text-4xl font-serif-luxury font-bold text-zinc-950 tabular-nums">
                 {String(timeLeft.days).padStart(2, '0')}
               </span>
-              <span className="text-[10px] sm:text-xs uppercase tracking-wider font-semibold text-zinc-500">Days</span>
+              <span className="text-[9px] sm:text-xs uppercase tracking-wider font-semibold text-zinc-500">Days</span>
             </div>
-            <div className="p-3.5 bg-zinc-50 rounded-xl border border-zinc-200 shadow-2xs">
+            <div className="p-2 sm:p-3.5 bg-zinc-50 rounded-xl border border-zinc-200 shadow-2xs">
               <span className="block text-2xl sm:text-4xl font-serif-luxury font-bold text-zinc-950 tabular-nums">
                 {String(timeLeft.hours).padStart(2, '0')}
               </span>
-              <span className="text-[10px] sm:text-xs uppercase tracking-wider font-semibold text-zinc-500">Hours</span>
+              <span className="text-[9px] sm:text-xs uppercase tracking-wider font-semibold text-zinc-500">Hours</span>
             </div>
-            <div className="p-3.5 bg-zinc-50 rounded-xl border border-zinc-200 shadow-2xs">
+            <div className="p-2 sm:p-3.5 bg-zinc-50 rounded-xl border border-zinc-200 shadow-2xs">
               <span className="block text-2xl sm:text-4xl font-serif-luxury font-bold text-zinc-950 tabular-nums">
                 {String(timeLeft.minutes).padStart(2, '0')}
               </span>
-              <span className="text-[10px] sm:text-xs uppercase tracking-wider font-semibold text-zinc-500">Minutes</span>
+              <span className="text-[9px] sm:text-xs uppercase tracking-wider font-semibold text-zinc-500">Mins</span>
             </div>
-            <div className="p-3.5 bg-zinc-50 rounded-xl border border-purple-200 shadow-2xs bg-purple-50/50">
+            <div className="p-2 sm:p-3.5 bg-zinc-50 rounded-xl border border-purple-200 shadow-2xs bg-purple-50/50">
               <span className="block text-2xl sm:text-4xl font-serif-luxury font-bold text-purple-700 tabular-nums">
                 {String(timeLeft.seconds).padStart(2, '0')}
               </span>
-              <span className="text-[10px] sm:text-xs uppercase tracking-wider font-bold text-pink-600">Seconds</span>
+              <span className="text-[9px] sm:text-xs uppercase tracking-wider font-bold text-pink-600">Secs</span>
             </div>
           </div>
 
@@ -276,10 +280,10 @@ END:VCALENDAR`;
         </div>
 
         {/* Primary Action Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mt-8">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-2.5 sm:gap-4 mt-6 sm:mt-8 max-w-sm sm:max-w-none mx-auto">
           <button
             onClick={onOpenRSVP}
-            className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-white bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 hover:from-pink-600 hover:via-purple-700 hover:to-indigo-700 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center gap-2"
+            className="h-12 px-6 text-xs font-semibold uppercase tracking-wider text-white bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 hover:from-pink-600 hover:via-purple-700 hover:to-indigo-700 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer"
           >
             <Sparkles className="w-4 h-4" />
             <span>RSVP to Celebrate</span>
@@ -287,7 +291,7 @@ END:VCALENDAR`;
 
           <button
             onClick={onOpenCard}
-            className="px-5 py-3.5 text-xs font-semibold text-zinc-900 bg-white hover:bg-zinc-50 border border-zinc-300 rounded-xl shadow-xs transition-colors flex items-center gap-2"
+            className="h-12 px-5 text-xs font-semibold text-zinc-900 bg-white hover:bg-zinc-50 border border-zinc-300 rounded-xl shadow-xs transition-colors flex items-center justify-center gap-2 cursor-pointer"
           >
             <Calendar className="w-4 h-4 text-purple-600" />
             <span>View Wedding Invitation Card</span>
@@ -295,7 +299,7 @@ END:VCALENDAR`;
 
           <button
             onClick={downloadICS}
-            className="px-4 py-3.5 text-xs font-semibold text-zinc-700 hover:text-zinc-950 hover:bg-zinc-100 rounded-xl transition-colors flex items-center gap-1.5 border border-transparent hover:border-zinc-200"
+            className="h-11 px-4 text-xs font-semibold text-zinc-700 hover:text-zinc-950 hover:bg-zinc-100 rounded-xl transition-colors flex items-center justify-center gap-1.5 border border-zinc-200 cursor-pointer"
             title="Download .ics Calendar Event"
           >
             <Download className="w-4 h-4 text-pink-600" />

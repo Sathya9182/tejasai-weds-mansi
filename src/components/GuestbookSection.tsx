@@ -105,7 +105,7 @@ export const GuestbookSection: React.FC<GuestbookSectionProps> = ({ currentLang 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Write a Message Card */}
-          <div className="lg:col-span-5 bg-white p-6 sm:p-8 rounded-2xl border-2 border-purple-200/80 shadow-md sticky top-28">
+          <div className="lg:col-span-5 bg-white p-5 sm:p-8 rounded-2xl border-2 border-purple-200/80 shadow-md sticky top-28">
             <div className="space-y-1 mb-6">
               <span className="text-xs uppercase tracking-wider text-purple-700 font-bold flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5 text-pink-500" />
@@ -184,7 +184,7 @@ export const GuestbookSection: React.FC<GuestbookSectionProps> = ({ currentLang 
               <button
                 type="submit"
                 disabled={submitting}
-                className="w-full py-3.5 text-xs font-semibold uppercase tracking-wider text-white bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 hover:from-pink-600 hover:via-purple-700 hover:to-indigo-700 rounded-xl transition-all shadow-md flex items-center justify-center gap-2 disabled:opacity-50"
+                className="w-full h-12 text-xs font-semibold uppercase tracking-wider text-white bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 hover:from-pink-600 hover:via-purple-700 hover:to-indigo-700 rounded-xl transition-all shadow-md flex items-center justify-center gap-2 disabled:opacity-50 cursor-pointer"
               >
                 <Send className="w-3.5 h-3.5" />
                 <span>{submitting ? 'Posting Blessing...' : 'Post Blessing to Guestbook'}</span>

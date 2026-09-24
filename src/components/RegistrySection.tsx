@@ -289,8 +289,8 @@ export const RegistrySection: React.FC<RegistrySectionProps> = ({ currentLang })
       {/* AUTHENTIC ORIGINAL UPI QR CODE MODAL                           */}
       {/* ============================================================== */}
       {showQRModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-xs p-4 overflow-y-auto">
-          <div className="bg-white rounded-3xl max-w-md w-full p-6 sm:p-7 border-2 border-purple-300 shadow-2xl text-center space-y-5 relative my-8 animate-fadeIn">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-xs p-3 sm:p-4 overflow-y-auto">
+          <div className="bg-white rounded-3xl max-w-md w-full max-h-[92vh] overflow-y-auto p-4 sm:p-7 border-2 border-purple-300 shadow-2xl text-center space-y-4 sm:space-y-5 relative my-auto animate-fadeIn">
             {/* Close Button */}
             <button
               onClick={() => setShowQRModal(false)}
